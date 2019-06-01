@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChatBot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="r2d2" translatesAutoresizingMaskIntoConstraints="NO" id="ZHb-gq-mYU">
+                                <rect key="frame" x="99" y="694" width="262" height="281"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bb8" translatesAutoresizingMaskIntoConstraints="NO" id="1ie-Du-QbP">
+                                <rect key="frame" x="54" y="-89" width="307" height="264"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1tJ-UA-kzV">
+                                <rect key="frame" x="0.0" y="407" width="414" height="2"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="q6Y-3h-8sm"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Envie sua mensagem" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="x85-gd-abC">
+                                <rect key="frame" x="20" y="414" width="374" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Cyv-MN-3YG"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="0.84313725490196079" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="19"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldDidBeginEditing:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="rAa-qo-1oW"/>
+                                    <action selector="textFieldDidEndEditing:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="P1Z-AQ-ei9"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá, R2D2!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="5b7-cw-yvm">
+                                <rect key="frame" x="20" y="243" width="374" height="27"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.84313725490000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="venus" translatesAutoresizingMaskIntoConstraints="NO" id="XCa-1D-B9s">
+                                <rect key="frame" x="-293" y="285" width="1000" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="107" id="dfV-mn-dwS"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neptune" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ivx-GJ-3qt">
+                                <rect key="frame" x="255" y="328" width="144" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="rtI-PM-vcH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Light" family="Kohinoor Telugu" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.84313725490000002" blue="0.0" alpha="0.78068504648760328" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5b7-cw-yvm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0dd-vO-Mcn"/>
+                            <constraint firstItem="1tJ-UA-kzV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="686-js-9yo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1tJ-UA-kzV" secondAttribute="trailing" id="6kb-yC-3JB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5b7-cw-yvm" secondAttribute="trailing" constant="20" id="Jnc-Pe-q0y"/>
+                            <constraint firstItem="XCa-1D-B9s" firstAttribute="top" secondItem="5b7-cw-yvm" secondAttribute="bottom" constant="15" id="LTX-Cr-vhj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ivx-GJ-3qt" secondAttribute="trailing" constant="15" id="QGN-zu-l0x"/>
+                            <constraint firstItem="Ivx-GJ-3qt" firstAttribute="top" secondItem="5b7-cw-yvm" secondAttribute="bottom" constant="58" id="SyJ-Jk-dfI"/>
+                            <constraint firstItem="1tJ-UA-kzV" firstAttribute="top" secondItem="XCa-1D-B9s" secondAttribute="bottom" constant="15" id="Ydv-VE-MBO"/>
+                            <constraint firstItem="1tJ-UA-kzV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-40" id="eru-XH-vWw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x85-gd-abC" secondAttribute="trailing" constant="20" id="hsI-FW-SEG"/>
+                            <constraint firstItem="x85-gd-abC" firstAttribute="top" secondItem="1tJ-UA-kzV" secondAttribute="bottom" constant="5" id="kp0-rf-H4H"/>
+                            <constraint firstItem="x85-gd-abC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lzD-hR-Qth"/>
+                            <constraint firstItem="Ivx-GJ-3qt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="255" id="nif-zf-CIG"/>
+                            <constraint firstItem="XCa-1D-B9s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zNG-ew-XOG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="userMessage" destination="x85-gd-abC" id="jBc-JP-oUY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bb8" width="1200" height="1199"/>
+        <image name="r2d2" width="1009" height="1331"/>
+        <image name="venus" width="1000" height="1000"/>
+    </resources>
+</document>
