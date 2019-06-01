@@ -33,7 +33,7 @@
                                     <constraint firstAttribute="height" constant="2" id="q6Y-3h-8sm"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Envie sua mensagem" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="x85-gd-abC">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Pergunte para o BB-8" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="x85-gd-abC">
                                 <rect key="frame" x="20" y="414" width="374" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Cyv-MN-3YG"/>
@@ -46,8 +46,8 @@
                                     <action selector="textFieldDidEndEditing:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="P1Z-AQ-ei9"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá, R2D2!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="5b7-cw-yvm">
-                                <rect key="frame" x="20" y="243" width="374" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá, R2D2! Não sabe o que perguntar? Me diga o seu planeta favorito! Tenho algumas sugestões!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="5b7-cw-yvm">
+                                <rect key="frame" x="20" y="216.5" width="374" height="53.5"/>
                                 <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="19"/>
                                 <color key="textColor" red="1" green="0.84313725490000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -88,6 +88,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="botMessage" destination="5b7-cw-yvm" id="fFQ-IQ-gqc"/>
+                        <outlet property="planetImage" destination="XCa-1D-B9s" id="5wR-Y8-ePg"/>
                         <outlet property="userMessage" destination="x85-gd-abC" id="jBc-JP-oUY"/>
                     </connections>
                 </viewController>

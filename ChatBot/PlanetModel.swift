@@ -24,26 +24,30 @@ enum solarSystemAssets: String {
 }
 
 enum planetName: String {
-    case earth = "Earth"
+    case earth = "Terra"
     case jupiter = "Jupiter"
-    case mars = "Mars"
-    case mercury = "Mercury"
-    case neptune = "Neptune"
-    case saturn = "Saturn"
-    case sun = "Sun"
-    case uranus = "Uranus"
+    case mars = "Marte"
+    case mercury = "Mercúrio"
+    case neptune = "Netuno"
+    case saturn = "Saturno"
+    case sun = "Sol"
+    case uranus = "Urano"
     case venus = "Venus"
 }
 
 class Planet {
     
     var planetName: planetName!
+    var planetImage: solarSystemAssets!
     var peso: Double!
     var area: Double!
     var volume: Double!
+    var raio: Double!
     var densidade: Double!
     var gravidade: Double!
     var pressao: Int!
-    
-    
+    var satelites: [String]!
+    var temAgua: Bool!
+    var tempoRotacao: Int!
+    var distanciaDoSol: Int!
 }
