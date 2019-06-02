@@ -39,15 +39,32 @@ class Planet {
     
     var planetName: planetName!
     var planetImage: solarSystemAssets!
-    var peso: Double!
-    var area: Double!
-    var volume: Double!
-    var raio: Double!
-    var densidade: Double!
-    var gravidade: Double!
-    var pressao: Int!
+    var peso: String!
+    var area: String!
+    var volume: String!
+    var raio: String!
+    var densidade: String!
+    var gravidade: String!
+    var pressao: String!
     var satelites: [String]!
     var temAgua: Bool!
-    var tempoRotacao: Int!
-    var distanciaDoSol: Int!
+    var tempoRotacao: String!
+    var distanciaDoSol: String!
+
+    init(planetName: planetName, planetImage: solarSystemAssets, peso: String, area: String, volume: String, raio: String, densidade: String, gravidade: String, pressao: String, satelites: [String], temAgua: Bool, tempoRotacao: String, distanciaDoSol: String) {
+        
+        self.planetName = planetName
+        self.planetImage = planetImage
+        self.peso = peso
+        self.area = area
+        self.volume = volume
+        self.raio = raio
+        self.densidade = densidade
+        self.gravidade = gravidade
+        self.pressao = pressao
+        self.satelites = satelites
+        self.temAgua = temAgua
+        self.tempoRotacao = tempoRotacao
+        self.distanciaDoSol = distanciaDoSol
+    }
 }

@@ -53,13 +53,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="venus" translatesAutoresizingMaskIntoConstraints="NO" id="XCa-1D-B9s">
-                                <rect key="frame" x="-293" y="285" width="1000" height="107"/>
+                                <rect key="frame" x="199" y="285" width="16" height="107"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="107" id="dfV-mn-dwS"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neptune" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ivx-GJ-3qt">
-                                <rect key="frame" x="255" y="328" width="144" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neptune" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ivx-GJ-3qt">
+                                <rect key="frame" x="245" y="370" width="154" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="rtI-PM-vcH"/>
                                 </constraints>
@@ -76,13 +76,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5b7-cw-yvm" secondAttribute="trailing" constant="20" id="Jnc-Pe-q0y"/>
                             <constraint firstItem="XCa-1D-B9s" firstAttribute="top" secondItem="5b7-cw-yvm" secondAttribute="bottom" constant="15" id="LTX-Cr-vhj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ivx-GJ-3qt" secondAttribute="trailing" constant="15" id="QGN-zu-l0x"/>
-                            <constraint firstItem="Ivx-GJ-3qt" firstAttribute="top" secondItem="5b7-cw-yvm" secondAttribute="bottom" constant="58" id="SyJ-Jk-dfI"/>
+                            <constraint firstItem="Ivx-GJ-3qt" firstAttribute="top" secondItem="5b7-cw-yvm" secondAttribute="bottom" constant="100" id="SyJ-Jk-dfI"/>
                             <constraint firstItem="1tJ-UA-kzV" firstAttribute="top" secondItem="XCa-1D-B9s" secondAttribute="bottom" constant="15" id="Ydv-VE-MBO"/>
                             <constraint firstItem="1tJ-UA-kzV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-40" id="eru-XH-vWw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x85-gd-abC" secondAttribute="trailing" constant="20" id="hsI-FW-SEG"/>
                             <constraint firstItem="x85-gd-abC" firstAttribute="top" secondItem="1tJ-UA-kzV" secondAttribute="bottom" constant="5" id="kp0-rf-H4H"/>
                             <constraint firstItem="x85-gd-abC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lzD-hR-Qth"/>
-                            <constraint firstItem="Ivx-GJ-3qt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="255" id="nif-zf-CIG"/>
+                            <constraint firstItem="Ivx-GJ-3qt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="245" id="nif-zf-CIG"/>
                             <constraint firstItem="XCa-1D-B9s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zNG-ew-XOG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -90,6 +90,7 @@
                     <connections>
                         <outlet property="botMessage" destination="5b7-cw-yvm" id="fFQ-IQ-gqc"/>
                         <outlet property="planetImage" destination="XCa-1D-B9s" id="5wR-Y8-ePg"/>
+                        <outlet property="planetText" destination="Ivx-GJ-3qt" id="ww9-v5-sfF"/>
                         <outlet property="userMessage" destination="x85-gd-abC" id="jBc-JP-oUY"/>
                     </connections>
                 </viewController>
