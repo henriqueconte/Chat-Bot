@@ -12,7 +12,8 @@ import Foundation
 enum state: String {
     case start = "start"
     case gettingPlanet = "gettingPlanet"
-
+    case readingPlanetInformation = "readingPlanetInformation"
+    case finishedPlanet = "finishedPlanet"
 }
 
 class BotState{
