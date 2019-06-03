@@ -27,7 +27,7 @@ enum planetName: String {
     case earth = "Terra"
     case jupiter = "Jupiter"
     case mars = "Marte"
-    case mercury = "Mercúrio"
+    case mercury = "Mercurio"
     case neptune = "Netuno"
     case saturn = "Saturno"
     case sun = "Sol"

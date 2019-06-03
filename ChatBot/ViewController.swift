@@ -32,6 +32,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var actualField: String!
     var actualPlanet = Planet(planetName: .earth, planetImage: .bb8, peso: "none", area: "none", volume: "none", raio: "none", densidade: "none", gravidade: "none", pressao: "none", satelites: [], temAgua: false, tempoRotacao: "none", distanciaDoSol: "none")
     var hasReceivedReturnButton = false
+    var userWantsInfo = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,57 +95,101 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
         case sentMessage.lowercased().contains("ter") && !sentMessage.lowercased().contains("jup"):
             actualPlanet = planets["Terra"]!
-            botState.state = .gettingPlanet
+            
+            if userWantsInfo == true {
+                botState.state = .readingPlanetInformation
+            }
+            else {
+                botState.state = .gettingPlanet
+            }
+            
             readBotState(planet: "Terra")
             
         case sentMessage.lowercased().contains("jup"):
             actualPlanet = planets["Jupiter"]!
-            botState.state = .gettingPlanet
+            if userWantsInfo == true {
+                botState.state = .readingPlanetInformation
+            }
+            else {
+                botState.state = .gettingPlanet
+            }
             readBotState(planet: "Jupiter")
            
             
         case sentMessage.lowercased().contains("mar"):
             actualPlanet = planets["Marte"]!
-            botState.state = .gettingPlanet
+            if userWantsInfo == true {
+                botState.state = .readingPlanetInformation
+            }
+            else {
+                botState.state = .gettingPlanet
+            }
             readBotState(planet: "Marte")
             
             
         case  sentMessage.lowercased().contains("mer"):
             actualPlanet = planets["Mercurio"]!
-            botState.state = .gettingPlanet
+            if userWantsInfo == true {
+                botState.state = .readingPlanetInformation
+            }
+            else {
+                botState.state = .gettingPlanet
+            }
             readBotState(planet: "Mercurio")
             
             
-        case sentMessage.lowercased().contains("net"):
+        case sentMessage.lowercased().contains("netu"):
             actualPlanet = planets["Netuno"]!
-            botState.state = .gettingPlanet
+            if userWantsInfo == true {
+                botState.state = .readingPlanetInformation
+            }
+            else {
+                botState.state = .gettingPlanet
+            }
             readBotState(planet: "Netuno")
             
             
         case sentMessage.lowercased().contains("satu"):
             actualPlanet = planets["Saturno"]!
-            botState.state = .gettingPlanet
+            if userWantsInfo == true {
+                botState.state = .readingPlanetInformation
+            }
+            else {
+                botState.state = .gettingPlanet
+            }
             readBotState(planet: "Saturno")
-            
-            
-        case sentMessage.lowercased().contains("sol"):
-            actualPlanet = planets["Sol"]!
-            botState.state = .gettingPlanet
-            readBotState(planet: "Sol")
-           
             
         case sentMessage.lowercased().contains("ura"):
             actualPlanet = planets["Urano"]!
-            botState.state = .gettingPlanet
+            if userWantsInfo == true {
+                botState.state = .readingPlanetInformation
+            }
+            else {
+                botState.state = .gettingPlanet
+            }
             readBotState(planet: "Urano")
 
             
         case sentMessage.lowercased().contains("ven"):
             actualPlanet = planets["Venus"]!
-            botState.state = .gettingPlanet
+            if userWantsInfo == true {
+                botState.state = .readingPlanetInformation
+            }
+            else {
+                botState.state = .gettingPlanet
+            }
             readBotState(planet: "Venus")
         
-        
+        case sentMessage.lowercased().contains("sol"):
+            actualPlanet = planets["Sol"]!
+            if userWantsInfo == true {
+                botState.state = .readingPlanetInformation
+            }
+            else {
+                botState.state = .gettingPlanet
+            }
+            readBotState(planet: "Sol")
+            
         default:
             botMessage.text = errorMessages[ Int.random(in: 0..<errorMessages.count) ]
         }
@@ -175,7 +220,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         botMessage.text = firstPhrase + secondPhrase
         
-        planetImage.image = UIImage(named: planet.planetName.rawValue)
+        planetImage.image = UIImage(named: actualPlanet.planetName.rawValue)
         planetText.text = "\(planet.planetName.rawValue)"
         planetText.alpha = 1
         
@@ -192,48 +237,59 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         let misunderstood = ["Hmmm, não entendi sua resposta", "Pode me perguntar outra coisa, por favor?", "Desculpe, não entendi"]
         
+        planetImage.image = UIImage(named: actualPlanet.planetName.rawValue)
+        planetText.text = "\(actualPlanet.planetName.rawValue)"
+        
         switch sentMessage.lowercased().contains(" ") {
-        case sentMessage.contains("nao") || sentMessage.contains("não") || sentMessage.contains("nah")  || sentMessage.contains("naum"):
+        case sentMessage.lowercased().contains("nao") || sentMessage.lowercased().contains("não") || sentMessage.lowercased().contains("nah")  || sentMessage.lowercased().contains("naum"):
             let randomNegativeAnswer = negativeAnswers[Int.random(in: 0..<negativeAnswers.count)]
             let newRandomField = possibleFields[Int.random(in: 0..<possibleFields.count)]
             actualField = newRandomField
             
             botMessage.text = randomNegativeAnswer + " " + newRandomField
             
-        case sentMessage.contains("sim") || sentMessage.contains("aham") || sentMessage.contains("claro") || sentMessage.contains("bastante") || sentMessage.contains("muito") || sentMessage.contains("quer"):
+        case sentMessage.lowercased().contains("sim") || sentMessage.lowercased().contains("aham") || sentMessage.lowercased().contains("claro") || sentMessage.lowercased().contains("bastante") || sentMessage.lowercased().contains("muito") || sentMessage.lowercased().contains("quer") || sentMessage.lowercased().contains("pode") || userWantsInfo == true:
             
             switch actualField {
             case "seu peso?":
                 botMessage.text = "O peso de \(planet.planetName.rawValue) é \(planet.peso!)! O que mais você quer saber?"
                 botState.state = .finishedPlanet
+                userWantsInfo = false
                 
             case "sua área?":
                 botMessage.text = "A área da superfície  de \(planet.planetName.rawValue) é \(planet.area!)! O que mais você quer saber?"
                 botState.state = .finishedPlanet
+                userWantsInfo = false
                 
             case "seu volume?":
                 botMessage.text = "O volume de \(planet.planetName.rawValue) é \(planet.volume!)! O que mais você quer saber?"
                 botState.state = .finishedPlanet
+                userWantsInfo = false
                 
             case "seu raio?":
                 botMessage.text = "O raio de \(planet.planetName.rawValue) é \(planet.raio!)! O que mais você quer saber?"
                 botState.state = .finishedPlanet
+                userWantsInfo = false
                 
             case "sua densidade?":
                 botMessage.text = "A densidade de \(planet.planetName.rawValue) é \(planet.densidade!)! O que mais você quer saber?"
                 botState.state = .finishedPlanet
+                userWantsInfo = false
                 
             case "sua gravidade?":
                 botMessage.text = "A gravidade de \(planet.planetName.rawValue) é \(planet.gravidade!)! O que mais você quer saber?"
                 botState.state = .finishedPlanet
+                userWantsInfo = false
                 
             case "sua pressão?":
-                botMessage.text = "A pressao de \(planet.planetName.rawValue) é \(planet.pressao!)! O que mais você quer saber?"
+                botMessage.text = "A pressão de \(planet.planetName.rawValue) é \(planet.pressao!)! O que mais você quer saber?"
                 botState.state = .finishedPlanet
+                userWantsInfo = false
                 
             case "seus satélites?":
                 botMessage.text = "Os satélites de \(planet.planetName.rawValue) são \(planet.satelites!)! O que mais você quer saber?"
                 botState.state = .finishedPlanet
+                userWantsInfo = false
                 
             case "se há água?":
                 if planet.temAgua == true {
@@ -243,14 +299,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     botMessage.text = "\(planet.planetName.rawValue) não possui água! O que mais você quer saber?"
                 }
                 botState.state = .finishedPlanet
+                userWantsInfo = false
                 
             case "seu tempo de rotação?":
                 botMessage.text = "O tempo de rotação de \(planet.planetName.rawValue) é de \(planet.tempoRotacao!)! O que mais você quer saber?"
                 botState.state = .finishedPlanet
+                userWantsInfo = false
                 
             case "sua distância até o sol?":
                 botMessage.text = "A distância de \(planet.planetName.rawValue) até o Sol é de \(planet.distanciaDoSol!)! O que mais você quer saber?"
                 botState.state = .finishedPlanet
+                userWantsInfo = false
                 
             default:
                 botMessage.text = "Desculpe, essa informação vou ficar te devendo..."
@@ -264,37 +323,76 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func finishedPlanet(planet: Planet){
         
-//        switch sentMessage.lowercased().contains(" ") {
-//        case sentMessage.contains(" "):
-//            <#code#>
-//        default:
-//            <#code#>
-//        }
+        switch sentMessage.lowercased().contains(" ") {
+        case sentMessage.lowercased().contains("peso") || sentMessage.lowercased().contains("pezo"):
+            actualField = "seu peso?"
+            userWantsInfo = true
+            botState.state = .start
+            readBotState(planet: planet.planetName.rawValue)
+            
+        case sentMessage.lowercased().contains("area") || sentMessage.lowercased().contains("área") || sentMessage.lowercased().contains("aria"):
+            actualField = "sua área?"
+            userWantsInfo = true
+            botState.state = .start
+            readBotState(planet: planet.planetName.rawValue)
+        
+        case sentMessage.lowercased().contains("volu"):
+            actualField = "seu volume?"
+            userWantsInfo = true
+            botState.state = .start
+            readBotState(planet: planet.planetName.rawValue)
+            
+        case sentMessage.lowercased().contains("raio") || sentMessage.lowercased().contains("taman"):
+            actualField = "seu raio?"
+            userWantsInfo = true
+            botState.state = .start
+            readBotState(planet: planet.planetName.rawValue)
+            
+        case sentMessage.lowercased().contains("dens"):
+            actualField = "sua densidade?"
+            userWantsInfo = true
+            botState.state = .start
+            readBotState(planet: planet.planetName.rawValue)
+            
+        case sentMessage.lowercased().contains("grav"):
+            actualField = "sua gravidade?"
+            userWantsInfo = true
+            botState.state = .start
+            readBotState(planet: planet.planetName.rawValue)
+        
+        case sentMessage.lowercased().contains("pres"):
+            actualField = "sua pressão?"
+            userWantsInfo = true
+            botState.state = .start
+            readBotState(planet: planet.planetName.rawValue)
+        
+        case sentMessage.lowercased().contains("sate") || sentMessage.lowercased().contains("saté"):
+            actualField = "seus satélites?"
+            userWantsInfo = true
+            botState.state = .start
+            readBotState(planet: planet.planetName.rawValue)
+        
+        case sentMessage.lowercased().contains("agu") || sentMessage.lowercased().contains("águ"):
+            actualField = "se há água?"
+            userWantsInfo = true
+            botState.state = .start
+            readBotState(planet: planet.planetName.rawValue)
+            
+        case sentMessage.lowercased().contains("tempo") || sentMessage.lowercased().contains("rota") || sentMessage.lowercased().contains("giro") || sentMessage.lowercased().contains("dura"):
+            actualField = "seu tempo de rotação?"
+            userWantsInfo = true
+            botState.state = .start
+            readBotState(planet: planet.planetName.rawValue)
+            
+        case sentMessage.lowercased().contains("dist") || sentMessage.lowercased().contains("long"):
+            actualField = "sua distância até o sol?"
+            userWantsInfo = true
+            botState.state = .start
+            readBotState(planet: planet.planetName.rawValue)
+        default:
+            print("aff")
+        }
         
     }
-    
-    //    case earth = "Earth"
-    //    case jupiter = "Jupiter"
-    //    case mars = "Mars"
-    //    case mercury = "Mercury"
-    //    case neptune = "Neptune"
-    //    case saturn = "Saturn"
-    //    case sun = "Sun"
-    //    case uranus = "Uranus"
-    //    case venus = "Venus"
-    
-    //    var planetName: planetName!
-    //    var planetImage: solarSystemAssets!
-    //    var peso: Double!
-    //    var area: Double!
-    //    var volume: Double!
-    //    var raio: Double!
-    //    var densidade: Double!
-    //    var gravidade: Double!
-    //    var pressao: Int!
-    //    var satelites: [String]!
-    //    var temAgua: Bool!
-    //    var tempoRotacao: Int!
-    //    var distanciaDoSol: Int!
 }
 
