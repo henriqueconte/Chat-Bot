@@ -70,7 +70,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case .start:
             suggestionState()
             
-        case .gettingPlanet:
+        case .suggestingInfo:
             readUserPlanet(planet: planets[planet]!)
             
         case .readingPlanetInformation:
@@ -100,7 +100,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 botState.state = .readingPlanetInformation
             }
             else {
-                botState.state = .gettingPlanet
+                botState.state = .suggestingInfo
             }
             
             readBotState(planet: "Terra")
@@ -111,7 +111,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 botState.state = .readingPlanetInformation
             }
             else {
-                botState.state = .gettingPlanet
+                botState.state = .suggestingInfo
             }
             readBotState(planet: "Jupiter")
            
@@ -122,7 +122,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 botState.state = .readingPlanetInformation
             }
             else {
-                botState.state = .gettingPlanet
+                botState.state = .suggestingInfo
             }
             readBotState(planet: "Marte")
             
@@ -133,7 +133,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 botState.state = .readingPlanetInformation
             }
             else {
-                botState.state = .gettingPlanet
+                botState.state = .suggestingInfo
             }
             readBotState(planet: "Mercurio")
             
@@ -144,7 +144,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 botState.state = .readingPlanetInformation
             }
             else {
-                botState.state = .gettingPlanet
+                botState.state = .suggestingInfo
             }
             readBotState(planet: "Netuno")
             
@@ -155,7 +155,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 botState.state = .readingPlanetInformation
             }
             else {
-                botState.state = .gettingPlanet
+                botState.state = .suggestingInfo
             }
             readBotState(planet: "Saturno")
             
@@ -165,7 +165,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 botState.state = .readingPlanetInformation
             }
             else {
-                botState.state = .gettingPlanet
+                botState.state = .suggestingInfo
             }
             readBotState(planet: "Urano")
 
@@ -176,7 +176,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 botState.state = .readingPlanetInformation
             }
             else {
-                botState.state = .gettingPlanet
+                botState.state = .suggestingInfo
             }
             readBotState(planet: "Venus")
         
@@ -186,7 +186,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 botState.state = .readingPlanetInformation
             }
             else {
-                botState.state = .gettingPlanet
+                botState.state = .suggestingInfo
             }
             readBotState(planet: "Sol")
             
@@ -200,8 +200,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let possiblePrefixes = ["Hmmm, eu adoro ", "Eu sabia que você ia escolher ", "Então você está interessado por "]
         
         let possibleSufixes = ["Que tal descobrir", "Quer saber", "Te interessa"]
-        
-     //   let possibleFields = ["seu peso?":planet.peso!, "sua área?":planet.area!, "seu volume?":planet.volume!, "seu raio?":planet.raio!, "sua densidade?":planet.densidade!, "sua gravidade?":planet.gravidade!, "sua pressão?":planet.pressao!, "seus satélites?":planet.satelites!, "se há água?":planet.temAgua!, "seu tempo de rotação?":planet.tempoRotacao!, "sua distância até o sol?":planet.distanciaDoSol!] as [String : Any]
         
         let possibleFields = ["seu peso?", "sua área?", "seu volume?", "seu raio?", "sua densidade?", "sua gravidade?", "sua pressão?",  "seus satélites?", "se há água?", "seu tempo de rotação?", "sua distância até o sol?"]
         
@@ -323,8 +321,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func finishedPlanet(planet: Planet){
         
+        let misunderstood = ["Talvez eu não saiba essa informação...", "O que você quer dizer com isso?", "Por favor, fale de maneira que eu entenda!"]
+        
         switch sentMessage.lowercased().contains(" ") {
-        case sentMessage.lowercased().contains("peso") || sentMessage.lowercased().contains("pezo"):
+        case sentMessage.lowercased().contains("peso") || sentMessage.lowercased().contains("pezo") || sentMessage.lowercased().contains("mass"):
             actualField = "seu peso?"
             userWantsInfo = true
             botState.state = .start
@@ -389,8 +389,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             userWantsInfo = true
             botState.state = .start
             readBotState(planet: planet.planetName.rawValue)
+            
+        case sentMessage.lowercased().contains("nada") || sentMessage.lowercased().contains("odeio") || sentMessage.lowercased().contains("nenh"):
+            botMessage.text = "Ok, então."
+            
         default:
-            print("aff")
+            botMessage.text = misunderstood[Int.random(in: 0..<misunderstood.count)]
         }
         
     }

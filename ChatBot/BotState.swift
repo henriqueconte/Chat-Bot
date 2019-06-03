@@ -11,7 +11,7 @@ import Foundation
 
 enum state: String {
     case start = "start"
-    case gettingPlanet = "gettingPlanet"
+    case suggestingInfo = "suggestingInfo"
     case readingPlanetInformation = "readingPlanetInformation"
     case finishedPlanet = "finishedPlanet"
 }
