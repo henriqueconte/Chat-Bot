@@ -393,6 +393,101 @@ class ViewController: UIViewController, UITextFieldDelegate {
         case sentMessage.lowercased().contains("nada") || sentMessage.lowercased().contains("odeio") || sentMessage.lowercased().contains("nenh"):
             botMessage.text = "Ok, então."
             
+        case sentMessage.lowercased().contains("ter") && !sentMessage.lowercased().contains("jup"):
+            actualPlanet = planets["Terra"]!
+            
+            if userWantsInfo == true {
+                botState.state = .readingPlanetInformation
+            }
+            else {
+                botState.state = .suggestingInfo
+            }
+            
+            readBotState(planet: "Terra")
+            
+        case sentMessage.lowercased().contains("jup"):
+            actualPlanet = planets["Jupiter"]!
+            if userWantsInfo == true {
+                botState.state = .readingPlanetInformation
+            }
+            else {
+                botState.state = .suggestingInfo
+            }
+            readBotState(planet: "Jupiter")
+            
+            
+        case sentMessage.lowercased().contains("mar"):
+            actualPlanet = planets["Marte"]!
+            if userWantsInfo == true {
+                botState.state = .readingPlanetInformation
+            }
+            else {
+                botState.state = .suggestingInfo
+            }
+            readBotState(planet: "Marte")
+            
+            
+        case  sentMessage.lowercased().contains("mer"):
+            actualPlanet = planets["Mercurio"]!
+            if userWantsInfo == true {
+                botState.state = .readingPlanetInformation
+            }
+            else {
+                botState.state = .suggestingInfo
+            }
+            readBotState(planet: "Mercurio")
+            
+            
+        case sentMessage.lowercased().contains("netu"):
+            actualPlanet = planets["Netuno"]!
+            if userWantsInfo == true {
+                botState.state = .readingPlanetInformation
+            }
+            else {
+                botState.state = .suggestingInfo
+            }
+            readBotState(planet: "Netuno")
+            
+            
+        case sentMessage.lowercased().contains("satu"):
+            actualPlanet = planets["Saturno"]!
+            if userWantsInfo == true {
+                botState.state = .readingPlanetInformation
+            }
+            else {
+                botState.state = .suggestingInfo
+            }
+            readBotState(planet: "Saturno")
+            
+        case sentMessage.lowercased().contains("ura"):
+            actualPlanet = planets["Urano"]!
+            if userWantsInfo == true {
+                botState.state = .readingPlanetInformation
+            }
+            else {
+                botState.state = .suggestingInfo
+            }
+            readBotState(planet: "Urano")
+            
+            
+        case sentMessage.lowercased().contains("ven"):
+            actualPlanet = planets["Venus"]!
+            if userWantsInfo == true {
+                botState.state = .readingPlanetInformation
+            }
+            else {
+                botState.state = .suggestingInfo
+            }
+            readBotState(planet: "Venus")
+            
+        case sentMessage.lowercased().contains("sol"):
+            actualPlanet = planets["Sol"]!
+            if userWantsInfo == true {
+                botState.state = .readingPlanetInformation
+            }
+            else {
+                botState.state = .suggestingInfo
+            }
         default:
             botMessage.text = misunderstood[Int.random(in: 0..<misunderstood.count)]
         }
