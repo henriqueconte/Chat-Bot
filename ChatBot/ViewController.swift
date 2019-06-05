@@ -44,6 +44,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func setInitConfig() {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "galaxyBackground")!)
         userMessage.attributedPlaceholder = NSAttributedString(string: "Pergunte para o BB-8", attributes:              [NSAttributedString.Key.foregroundColor: UIColor(red: 1, green: 0.84, blue: 0, alpha: 1)])
+        planetImage.alpha = 0
+        
     }
     
     @IBAction func textFieldDidEndEditing(_ sender: UITextField) {
@@ -219,6 +221,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         botMessage.text = firstPhrase + secondPhrase
         
         planetImage.image = UIImage(named: actualPlanet.planetName.rawValue)
+        planetImage.alpha = 1
         planetText.text = "\(planet.planetName.rawValue)"
         planetText.alpha = 1
         

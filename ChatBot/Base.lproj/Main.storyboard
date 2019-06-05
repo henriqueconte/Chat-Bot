@@ -33,7 +33,7 @@
                                     <constraint firstAttribute="height" constant="2" id="q6Y-3h-8sm"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Pergunte para o BB-8" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="x85-gd-abC">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Pergunte para o BB-8" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="11" background="Button" translatesAutoresizingMaskIntoConstraints="NO" id="x85-gd-abC">
                                 <rect key="frame" x="20" y="414" width="374" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Cyv-MN-3YG"/>
@@ -52,8 +52,8 @@
                                 <color key="textColor" red="1" green="0.84313725490000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="venus" translatesAutoresizingMaskIntoConstraints="NO" id="XCa-1D-B9s">
-                                <rect key="frame" x="199" y="285" width="16" height="107"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Venus" translatesAutoresizingMaskIntoConstraints="NO" id="XCa-1D-B9s">
+                                <rect key="frame" x="-293" y="285" width="1000" height="107"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="107" id="dfV-mn-dwS"/>
                                 </constraints>
@@ -100,8 +100,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Button" width="709" height="188"/>
+        <image name="Venus" width="1000" height="1000"/>
         <image name="bb8" width="1200" height="1199"/>
         <image name="r2d2" width="1009" height="1331"/>
-        <image name="venus" width="1000" height="1000"/>
     </resources>
 </document>
