@@ -39,6 +39,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80010AE222AC628F0030502A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				80DCFD5D2288D55500DCD144 /* AppDelegate.swift */,
+				80DCFD5F2288D55500DCD144 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		80010AE322AC62AB0030502A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				80B7042422A310B900496581 /* PlanetModel.swift */,
+				80B7042622A330B400496581 /* BotState.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		80010AE422AC62BF0030502A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				80DCFD662288D55700DCD144 /* LaunchScreen.storyboard */,
+				80DCFD612288D55500DCD144 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		80DCFD512288D55500DCD144 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +85,11 @@
 		80DCFD5C2288D55500DCD144 /* ChatBot */ = {
 			isa = PBXGroup;
 			children = (
-				80DCFD5D2288D55500DCD144 /* AppDelegate.swift */,
-				80DCFD5F2288D55500DCD144 /* ViewController.swift */,
-				80DCFD612288D55500DCD144 /* Main.storyboard */,
+				80010AE322AC62AB0030502A /* Model */,
+				80010AE422AC62BF0030502A /* View */,
+				80010AE222AC628F0030502A /* Controller */,
 				80DCFD642288D55700DCD144 /* Assets.xcassets */,
-				80DCFD662288D55700DCD144 /* LaunchScreen.storyboard */,
 				80DCFD692288D55700DCD144 /* Info.plist */,
-				80B7042422A310B900496581 /* PlanetModel.swift */,
-				80B7042622A330B400496581 /* BotState.swift */,
 			);
 			path = ChatBot;
 			sourceTree = "<group>";
